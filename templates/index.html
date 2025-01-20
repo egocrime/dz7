@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Путеводитель по миру</title>
+</head>
+<body>
+
+<!-- Навигационное меню -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Путеводитель по миру</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключить навигацию">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Главная</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Места для посещения</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Советы для путешественников</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Контакты</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Картинка travel.jpg (1 большая вместо трех маленьких) -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <img src="{{ url_for('static', filename='images/travel.jpg') }}" class="img-fluid" alt="Путеводитель по миру">
+        </div>
+    </div>
+</div>
+
+<!-- Раздел популярных мест -->
+<div class="container mt-5">
+    <h2>Популярные Места для Путешествий</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/paris.jpg') }}" class="card-img-top" alt="Место 1">
+                <div class="card-body">
+                    <h5 class="card-title">Город Париж</h5>
+                    <p class="card-text">Очаровательная столица Франции, известная своими достопримечательностями и культурой.</p>
+                    <a href="#" class="btn btn-primary">Читать обзор</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/tokyo.jpg') }}" class="card-img-top" alt="Место 2">
+                <div class="card-body">
+                    <h5 class="card-title">Токио, Япония</h5>
+                    <p class="card-text">Смешение старинных традиций и современных технологий, японская культура в одном месте.</p>
+                    <a href="#" class="btn btn-primary">Читать обзор</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/kyoto.jpg') }}" class="card-img-top" alt="Место 3">
+                <div class="card-body">
+                    <h5 class="card-title">Киото, Япония</h5>
+                    <p class="card-text">Древняя столица Японии, полная храмов, садов и исторических зданий.</p>
+                    <a href="#" class="btn btn-primary">Читать обзор</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Раздел аккордеона с советами для путешественников -->
+<div class="container mt-5">
+    <h2>Советы для Путешественников</h2>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Как найти дешевые авиабилеты?
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    Используйте агрегаторы для поиска лучших предложений и всегда проверяйте акции авиакомпаний.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Как выбрать лучший отель?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    Читайте отзывы, проверяйте рейтинг и сравнивайте цены на популярных платформах.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Какие вещи брать в путешествие?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                    Обязательно возьмите универсальные вещи, которые могут пригодиться в разных климатических условиях.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Футер -->
+<footer class="bg-light text-center text-lg-start mt-5 p-4">
+    <div>©2025 Путеводитель по миру.</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
